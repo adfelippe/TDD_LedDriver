@@ -1,0 +1,42 @@
+---
+:source:
+  :path: test
+  :file: test_LedDriver.c
+:successes:
+- :test: test_LedDriver_LedsOffAfterInitialization
+  :line: 16
+  :message: ''
+  :unity_test_time: 0
+- :test: test_LedDriver_TurnOnLedOne
+  :line: 23
+  :message: ''
+  :unity_test_time: 0
+- :test: test_LedDriver_TurnOffLedOne
+  :line: 29
+  :message: ''
+  :unity_test_time: 0
+- :test: test_LedDriver_TurnOnMultipleLeds
+  :line: 35
+  :message: ''
+  :unity_test_time: 0
+- :test: test_LedDriver_TurnAllOn
+  :line: 42
+  :message: ''
+  :unity_test_time: 0
+- :test: test_LedDriver_LedTurnOffAnyLed
+  :line: 48
+  :message: ''
+  :unity_test_time: 0
+- :test: test_LedDriver_LedMemoryIsNotReadable
+  :line: 55
+  :message: ''
+  :unity_test_time: 0
+:failures: []
+:ignores: []
+:counts:
+  :total: 7
+  :passed: 7
+  :failed: 0
+  :ignored: 0
+:stdout: []
+:time: 0.0009375900044688024
