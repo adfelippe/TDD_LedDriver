@@ -4,39 +4,50 @@
   :file: test_LedDriver.c
 :successes:
 - :test: test_LedDriver_LedsOffAfterInitialization
-  :line: 16
+  :line: 18
   :message: ''
-  :unity_test_time: 0
 - :test: test_LedDriver_TurnOnLedOne
-  :line: 23
+  :line: 25
   :message: ''
-  :unity_test_time: 0
 - :test: test_LedDriver_TurnOffLedOne
-  :line: 29
+  :line: 31
   :message: ''
-  :unity_test_time: 0
 - :test: test_LedDriver_TurnOnMultipleLeds
-  :line: 35
+  :line: 37
   :message: ''
-  :unity_test_time: 0
 - :test: test_LedDriver_TurnAllOn
-  :line: 42
+  :line: 44
   :message: ''
-  :unity_test_time: 0
 - :test: test_LedDriver_LedTurnOffAnyLed
-  :line: 48
+  :line: 50
   :message: ''
-  :unity_test_time: 0
 - :test: test_LedDriver_LedMemoryIsNotReadable
-  :line: 55
+  :line: 57
   :message: ''
-  :unity_test_time: 0
+- :test: test_LedDriver_UpperAndLowerBounds
+  :line: 64
+  :message: ''
+- :test: test_LedDriver_OutOfBoundsChangesNothing
+  :line: 71
+  :message: ''
+- :test: test_LedDriver_OutOfBoundsDoesNoHarm
+  :line: 80
+  :message: ''
+- :test: test_LedDriver_OutOfBoundsLedOnProducesRuntimeError
+  :line: 90
+  :message: ''
 :failures: []
-:ignores: []
+:ignores:
+- :test: test_LedDriver_OutOfBoundsToDo
+  :line: 99
+  :message: TODO!
+- :test: test_LedDriver_OutOfBoundsToDoNoIgnoreMessage
+  :line: 105
+  :message: ''
 :counts:
-  :total: 7
-  :passed: 7
+  :total: 13
+  :passed: 11
   :failed: 0
-  :ignored: 0
+  :ignored: 2
 :stdout: []
-:time: 0.0009375900044688024
+:time: 0.0038863119998495677

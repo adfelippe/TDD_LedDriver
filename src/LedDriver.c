@@ -1,5 +1,6 @@
 #include <stdint.h>
 #include "LedDriver.h"
+#include "RuntimeErrorStub.h"
 
 
 enum {ALL_LEDS_OFF = 0x0, ALL_LEDS_ON = 0xFFFF};
@@ -20,12 +21,20 @@ uint8_t LedDriver_Init(uint16_t *address)
 
 void LedDriver_TurnOn(uint16_t ledNumber)
 {
+    if (ledNumber <= 0 || ledNumber > 16) {
+        RUNTIME_ERROR("LED Driver: out-of-bounds LED", -1);
+        return;
+    }
     ledsImage |= convertLedNumberToBit(ledNumber);
     updateLedHardware();
 }
 
 void LedDriver_TurnOff(uint16_t ledNumber)
 {
+    if (ledNumber <= 0 || ledNumber > 16) {
+        RUNTIME_ERROR("LED Driver: out-of-bounds LED", -1);
+        return;
+    }
     ledsImage &= ~(convertLedNumberToBit(ledNumber));
     updateLedHardware();
 }
