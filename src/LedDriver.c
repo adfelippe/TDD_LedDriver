@@ -1,5 +1,3 @@
-#include <stdint.h>
-#include <stdbool.h>
 #include "LedDriver.h"
 #include "RuntimeErrorStub.h"
 
@@ -41,7 +39,7 @@ void LedDriver_TurnOff(uint16_t ledNumber)
         RUNTIME_ERROR("LED Driver: out-of-bounds LED", -1);
         return;
     }
-    
+
     clearLedImageBit(ledNumber);
     updateLedHardware();
 }
@@ -50,6 +48,25 @@ void LedDriver_TurnAllOn(void)
 {
     ledsImage = ALL_LEDS_ON;
     updateLedHardware();
+}
+
+void LedDriver_TurnAllOff(void)
+{
+    ledsImage = ALL_LEDS_OFF;
+    updateLedHardware();
+}
+
+bool LedDriver_IsLedOn(uint16_t ledNumber)
+{
+    if (IsLedOutOfBounds(ledNumber))
+        return false;
+    else
+        return ledsImage & (convertLedNumberToBit(ledNumber));
+}
+
+bool LedDriver_IsLedOff(uint16_t ledNumber)
+{
+    return !LedDriver_IsLedOn(ledNumber);
 }
 
 static uint16_t convertLedNumberToBit(uint16_t ledNumber)
@@ -64,7 +81,7 @@ static void updateLedHardware(void)
 
 static bool IsLedOutOfBounds(uint16_t ledNumber)
 {
-    return (ledNumber <= 0 || ledNumber > 16);
+    return (ledNumber < FIRST_LED || ledNumber > LAST_LED);
 }
 
 static void setLedImageBit(int ledNumber)

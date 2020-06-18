@@ -15,36 +15,48 @@
 - :test: test_LedDriver_TurnOnMultipleLeds
   :line: 37
   :message: ''
-- :test: test_LedDriver_TurnAllOn
+- :test: test_LedDriver_TurnOffMultipleLeds
   :line: 44
   :message: ''
+- :test: test_LedDriver_TurnAllOn
+  :line: 52
+  :message: ''
+- :test: test_LedDriver_TurnAllOff
+  :line: 58
+  :message: ''
 - :test: test_LedDriver_LedTurnOffAnyLed
-  :line: 50
+  :line: 65
   :message: ''
 - :test: test_LedDriver_LedMemoryIsNotReadable
-  :line: 57
+  :line: 72
+  :message: ''
+- :test: test_LedDriver_IsLedOn
+  :line: 79
+  :message: ''
+- :test: test_LedDriver_IsLedOff
+  :line: 86
   :message: ''
 - :test: test_LedDriver_UpperAndLowerBounds
-  :line: 64
+  :line: 93
   :message: ''
 - :test: test_LedDriver_OutOfBoundsChangesNothing
-  :line: 71
+  :line: 100
   :message: ''
 - :test: test_LedDriver_OutOfBoundsDoesNoHarm
-  :line: 80
+  :line: 109
   :message: ''
 - :test: test_LedDriver_OutOfBoundsLedOnProducesRuntimeError
-  :line: 90
+  :line: 119
+  :message: ''
+- :test: test_LedDriver_OutOfBoundsLedsAreAlwaysOff
+  :line: 126
   :message: ''
 :failures: []
-:ignores:
-- :test: test_LedDriver_OutOfBoundsToDo
-  :line: 99
-  :message: Keep refactoring as tests pass!
+:ignores: []
 :counts:
-  :total: 12
-  :passed: 11
+  :total: 16
+  :passed: 16
   :failed: 0
-  :ignored: 1
+  :ignored: 0
 :stdout: []
-:time: 0.0010858539990294958
+:time: 0.0014105669997661607

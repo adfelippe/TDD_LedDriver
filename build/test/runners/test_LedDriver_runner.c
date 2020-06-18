@@ -39,14 +39,18 @@ extern void test_LedDriver_LedsOffAfterInitialization(void);
 extern void test_LedDriver_TurnOnLedOne(void);
 extern void test_LedDriver_TurnOffLedOne(void);
 extern void test_LedDriver_TurnOnMultipleLeds(void);
+extern void test_LedDriver_TurnOffMultipleLeds(void);
 extern void test_LedDriver_TurnAllOn(void);
+extern void test_LedDriver_TurnAllOff(void);
 extern void test_LedDriver_LedTurnOffAnyLed(void);
 extern void test_LedDriver_LedMemoryIsNotReadable(void);
+extern void test_LedDriver_IsLedOn(void);
+extern void test_LedDriver_IsLedOff(void);
 extern void test_LedDriver_UpperAndLowerBounds(void);
 extern void test_LedDriver_OutOfBoundsChangesNothing(void);
 extern void test_LedDriver_OutOfBoundsDoesNoHarm(void);
 extern void test_LedDriver_OutOfBoundsLedOnProducesRuntimeError(void);
-extern void test_LedDriver_OutOfBoundsToDo(void);
+extern void test_LedDriver_OutOfBoundsLedsAreAlwaysOff(void);
 
 
 /*=======Suite Setup=====*/
@@ -85,14 +89,18 @@ int main(void)
   RUN_TEST(test_LedDriver_TurnOnLedOne, 25);
   RUN_TEST(test_LedDriver_TurnOffLedOne, 31);
   RUN_TEST(test_LedDriver_TurnOnMultipleLeds, 37);
-  RUN_TEST(test_LedDriver_TurnAllOn, 44);
-  RUN_TEST(test_LedDriver_LedTurnOffAnyLed, 50);
-  RUN_TEST(test_LedDriver_LedMemoryIsNotReadable, 57);
-  RUN_TEST(test_LedDriver_UpperAndLowerBounds, 64);
-  RUN_TEST(test_LedDriver_OutOfBoundsChangesNothing, 71);
-  RUN_TEST(test_LedDriver_OutOfBoundsDoesNoHarm, 80);
-  RUN_TEST(test_LedDriver_OutOfBoundsLedOnProducesRuntimeError, 90);
-  RUN_TEST(test_LedDriver_OutOfBoundsToDo, 97);
+  RUN_TEST(test_LedDriver_TurnOffMultipleLeds, 44);
+  RUN_TEST(test_LedDriver_TurnAllOn, 52);
+  RUN_TEST(test_LedDriver_TurnAllOff, 58);
+  RUN_TEST(test_LedDriver_LedTurnOffAnyLed, 65);
+  RUN_TEST(test_LedDriver_LedMemoryIsNotReadable, 72);
+  RUN_TEST(test_LedDriver_IsLedOn, 79);
+  RUN_TEST(test_LedDriver_IsLedOff, 86);
+  RUN_TEST(test_LedDriver_UpperAndLowerBounds, 93);
+  RUN_TEST(test_LedDriver_OutOfBoundsChangesNothing, 100);
+  RUN_TEST(test_LedDriver_OutOfBoundsDoesNoHarm, 109);
+  RUN_TEST(test_LedDriver_OutOfBoundsLedOnProducesRuntimeError, 119);
+  RUN_TEST(test_LedDriver_OutOfBoundsLedsAreAlwaysOff, 126);
 
   return suite_teardown(UnityEnd());
 }

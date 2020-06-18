@@ -98,6 +98,26 @@ void test_LedDriver_TurnOnMultipleLeds(void)
 
 
 
+void test_LedDriver_TurnOffMultipleLeds(void)
+
+{
+
+    LedDriver_TurnAllOn();
+
+    LedDriver_TurnOff(9);
+
+    LedDriver_TurnOff(8);
+
+    UnityAssertEqualNumber((UNITY_INT)(UNITY_INT16)(((~0x180)&0xffff)), (UNITY_INT)(UNITY_INT16)((virtualLeds)), (
+
+   ((void *)0)
+
+   ), (UNITY_UINT)(49), UNITY_DISPLAY_STYLE_HEX16);
+
+}
+
+
+
 void test_LedDriver_TurnAllOn(void)
 
 {
@@ -108,7 +128,25 @@ void test_LedDriver_TurnAllOn(void)
 
    ((void *)0)
 
-   ), (UNITY_UINT)(47), UNITY_DISPLAY_STYLE_HEX16);
+   ), (UNITY_UINT)(55), UNITY_DISPLAY_STYLE_HEX16);
+
+}
+
+
+
+void test_LedDriver_TurnAllOff(void)
+
+{
+
+    LedDriver_TurnAllOn();
+
+    LedDriver_TurnAllOff();
+
+    UnityAssertEqualNumber((UNITY_INT)(UNITY_INT16)((0)), (UNITY_INT)(UNITY_INT16)((virtualLeds)), (
+
+   ((void *)0)
+
+   ), (UNITY_UINT)(62), UNITY_DISPLAY_STYLE_HEX16);
 
 }
 
@@ -126,7 +164,7 @@ void test_LedDriver_LedTurnOffAnyLed(void)
 
    ((void *)0)
 
-   ), (UNITY_UINT)(54), UNITY_DISPLAY_STYLE_HEX16);
+   ), (UNITY_UINT)(69), UNITY_DISPLAY_STYLE_HEX16);
 
 }
 
@@ -144,7 +182,35 @@ void test_LedDriver_LedMemoryIsNotReadable(void)
 
    ((void *)0)
 
-   ), (UNITY_UINT)(61), UNITY_DISPLAY_STYLE_HEX16);
+   ), (UNITY_UINT)(76), UNITY_DISPLAY_STYLE_HEX16);
+
+}
+
+
+
+void test_LedDriver_IsLedOn(void)
+
+{
+
+    if (!(LedDriver_IsLedOn(11))) {} else {UnityFail( ((" Expected FALSE Was TRUE")), (UNITY_UINT)((UNITY_UINT)(81)));};
+
+    LedDriver_TurnOn(11);
+
+    if ((LedDriver_IsLedOn(11))) {} else {UnityFail( ((" Expected TRUE Was FALSE")), (UNITY_UINT)((UNITY_UINT)(83)));};
+
+}
+
+
+
+void test_LedDriver_IsLedOff(void)
+
+{
+
+    if ((LedDriver_IsLedOff(12))) {} else {UnityFail( ((" Expected TRUE Was FALSE")), (UNITY_UINT)((UNITY_UINT)(88)));};
+
+    LedDriver_TurnOn(12);
+
+    if (!(LedDriver_IsLedOff(12))) {} else {UnityFail( ((" Expected FALSE Was TRUE")), (UNITY_UINT)((UNITY_UINT)(90)));};
 
 }
 
@@ -162,7 +228,7 @@ void test_LedDriver_UpperAndLowerBounds(void)
 
    ((void *)0)
 
-   ), (UNITY_UINT)(68), UNITY_DISPLAY_STYLE_HEX16);
+   ), (UNITY_UINT)(97), UNITY_DISPLAY_STYLE_HEX16);
 
 }
 
@@ -184,7 +250,7 @@ void test_LedDriver_OutOfBoundsChangesNothing(void)
 
    ((void *)0)
 
-   ), (UNITY_UINT)(77), UNITY_DISPLAY_STYLE_HEX16);
+   ), (UNITY_UINT)(106), UNITY_DISPLAY_STYLE_HEX16);
 
 }
 
@@ -208,7 +274,7 @@ void test_LedDriver_OutOfBoundsDoesNoHarm(void)
 
    ((void *)0)
 
-   ), (UNITY_UINT)(87), UNITY_DISPLAY_STYLE_HEX16);
+   ), (UNITY_UINT)(116), UNITY_DISPLAY_STYLE_HEX16);
 
 }
 
@@ -224,22 +290,28 @@ void test_LedDriver_OutOfBoundsLedOnProducesRuntimeError(void)
 
    ((void *)0)
 
-   ), (UNITY_UINT)(93));
+   ), (UNITY_UINT)(122));
 
     UnityAssertEqualNumber((UNITY_INT)((-1)), (UNITY_INT)((RuntimeErrorStub_GetLastParameter())), (
 
    ((void *)0)
 
-   ), (UNITY_UINT)(94), UNITY_DISPLAY_STYLE_INT);
+   ), (UNITY_UINT)(123), UNITY_DISPLAY_STYLE_INT);
 
 }
 
 
 
-void test_LedDriver_OutOfBoundsToDo(void)
+void test_LedDriver_OutOfBoundsLedsAreAlwaysOff(void)
 
 {
 
-    UnityIgnore( (("Keep refactoring as tests pass!")), (UNITY_UINT)(99));
+    if (!(LedDriver_IsLedOn(0))) {} else {UnityFail( ((" Expected FALSE Was TRUE")), (UNITY_UINT)((UNITY_UINT)(128)));};
+
+    if (!(LedDriver_IsLedOn(17))) {} else {UnityFail( ((" Expected FALSE Was TRUE")), (UNITY_UINT)((UNITY_UINT)(129)));};
+
+    if ((LedDriver_IsLedOff(0))) {} else {UnityFail( ((" Expected TRUE Was FALSE")), (UNITY_UINT)((UNITY_UINT)(130)));};
+
+    if ((LedDriver_IsLedOff(17))) {} else {UnityFail( ((" Expected TRUE Was FALSE")), (UNITY_UINT)((UNITY_UINT)(131)));};
 
 }
