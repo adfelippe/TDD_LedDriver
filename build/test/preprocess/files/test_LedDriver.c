@@ -240,22 +240,6 @@ void test_LedDriver_OutOfBoundsToDo(void)
 
 {
 
-    UnityIgnore( (("TODO!")), (UNITY_UINT)(99));
-
-}
-
-
-
-void test_LedDriver_OutOfBoundsToDoNoIgnoreMessage(void)
-
-{
-
-
-
-    UnityIgnore( (
-
-   ((void *)0)
-
-   ), (UNITY_UINT)(105));
+    UnityIgnore( (("Keep refactoring as tests pass!")), (UNITY_UINT)(99));
 
 }

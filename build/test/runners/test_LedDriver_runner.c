@@ -47,7 +47,6 @@ extern void test_LedDriver_OutOfBoundsChangesNothing(void);
 extern void test_LedDriver_OutOfBoundsDoesNoHarm(void);
 extern void test_LedDriver_OutOfBoundsLedOnProducesRuntimeError(void);
 extern void test_LedDriver_OutOfBoundsToDo(void);
-extern void test_LedDriver_OutOfBoundsToDoNoIgnoreMessage(void);
 
 
 /*=======Suite Setup=====*/
@@ -94,7 +93,6 @@ int main(void)
   RUN_TEST(test_LedDriver_OutOfBoundsDoesNoHarm, 80);
   RUN_TEST(test_LedDriver_OutOfBoundsLedOnProducesRuntimeError, 90);
   RUN_TEST(test_LedDriver_OutOfBoundsToDo, 97);
-  RUN_TEST(test_LedDriver_OutOfBoundsToDoNoIgnoreMessage, 102);
 
   return suite_teardown(UnityEnd());
 }

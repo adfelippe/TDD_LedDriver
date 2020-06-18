@@ -40,14 +40,11 @@
 :ignores:
 - :test: test_LedDriver_OutOfBoundsToDo
   :line: 99
-  :message: TODO!
-- :test: test_LedDriver_OutOfBoundsToDoNoIgnoreMessage
-  :line: 105
-  :message: ''
+  :message: Keep refactoring as tests pass!
 :counts:
-  :total: 13
+  :total: 12
   :passed: 11
   :failed: 0
-  :ignored: 2
+  :ignored: 1
 :stdout: []
-:time: 0.0038863119998495677
+:time: 0.0010858539990294958

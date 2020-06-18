@@ -96,11 +96,5 @@ void test_LedDriver_OutOfBoundsLedOnProducesRuntimeError(void)
 
 void test_LedDriver_OutOfBoundsToDo(void)
 {
-    TEST_IGNORE_MESSAGE("TODO!");
-}
-
-void test_LedDriver_OutOfBoundsToDoNoIgnoreMessage(void)
-{
-    //TEST_IGNORE_MESSAGE("Missing test: test_LedDriver_OutOfBoundsToDo");
-    TEST_IGNORE();
+    TEST_IGNORE_MESSAGE("Keep refactoring as tests pass!");
 }
