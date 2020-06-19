@@ -53,6 +53,9 @@ void test_LedDriver_TurnAllOn(void)
 {
     LedDriver_TurnAllOn();
     TEST_ASSERT_EQUAL_HEX16(0xFFFF, virtualLeds);
+    for (int i = 1; i <= 16; i++) {
+        TEST_ASSERT_TRUE(LedDriver_IsLedOn(i));
+    }
 }
 
 void test_LedDriver_TurnAllOff(void)
@@ -60,6 +63,9 @@ void test_LedDriver_TurnAllOff(void)
     LedDriver_TurnAllOn();
     LedDriver_TurnAllOff();
     TEST_ASSERT_EQUAL_HEX16(0, virtualLeds);
+    for (int i = 1; i <= 16; i++) {
+        TEST_ASSERT_TRUE(LedDriver_IsLedOff(i));
+    }
 }
 
 void test_LedDriver_LedTurnOffAnyLed(void)
