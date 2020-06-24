@@ -7,6 +7,7 @@
 uint8_t LedDriver_Init(uint16_t *address);
 void LedDriver_TurnOn(uint16_t ledNumber);
 void LedDriver_TurnOff(uint16_t ledNumber);
+void LedDriver_Toggle(uint16_t ledNumber);
 void LedDriver_TurnAllOn(void);
 void LedDriver_TurnAllOff(void);
 bool LedDriver_IsLedOn(uint16_t ledNumber);

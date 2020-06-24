@@ -56,6 +56,14 @@ void LedDriver_TurnAllOff(void)
     updateLedHardware();
 }
 
+void LedDriver_Toggle(uint16_t ledNumber)
+{
+    if (LedDriver_IsLedOn(ledNumber))
+        LedDriver_TurnOff(ledNumber);
+    else
+        LedDriver_TurnOn(ledNumber);
+}
+
 bool LedDriver_IsLedOn(uint16_t ledNumber)
 {
     if (IsLedOutOfBounds(ledNumber))

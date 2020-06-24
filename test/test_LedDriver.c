@@ -90,6 +90,20 @@ void test_LedDriver_IsLedOff(void)
     TEST_ASSERT_FALSE(LedDriver_IsLedOff(12));
 }
 
+void test_LedDriver_isLedTogglingToOn(void)
+{
+    LedDriver_TurnOff(13);
+    LedDriver_Toggle(13);
+    TEST_ASSERT_TRUE(LedDriver_IsLedOn(13))
+}
+
+void test_LedDriver_isLedTogglingToOff(void)
+{
+    LedDriver_TurnOn(13);
+    LedDriver_Toggle(13);
+    TEST_ASSERT_TRUE(LedDriver_IsLedOff(13))
+}
+
 void test_LedDriver_UpperAndLowerBounds(void)
 {
     LedDriver_TurnOn(1);
